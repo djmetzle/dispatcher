@@ -1,0 +1,18 @@
+# Dispatcher
+
+A simple to use process dispatch system.
+Designed for running data manipulation pipelines.
+
+### Usage
+`./dispatcher` takes as an argument a YAML file specifying
+a list of tasks, and their dependencies. See `test.yaml` for
+a complete example.
+
+### Warning!
+
+Currently, the task verifier does not account for cyclic
+dependencies. This can be a future feature add.
+
+If you are not careful to avoid cycles in the dependency
+graph, it will be possible to create a loop of tasks that
+will stay stuck in the `:waiting` state indefinitely.
